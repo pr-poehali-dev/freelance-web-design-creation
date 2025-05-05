@@ -1,12 +1,40 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useEffect } from 'react';
+import Header from '@/components/Header';
+import HeroSection from '@/components/HeroSection';
+import ServicesSection from '@/components/ServicesSection';
+import PortfolioSection from '@/components/PortfolioSection';
+import TestimonialsSection from '@/components/TestimonialsSection';
+import AboutSection from '@/components/AboutSection';
+import ContactSection from '@/components/ContactSection';
+import Footer from '@/components/Footer';
+import ScrollToTop from '@/components/ScrollToTop';
+import { setupScrollAnimations } from '@/utils/animations';
 
 const Index = () => {
+  useEffect(() => {
+    // Настраиваем анимации при скролле
+    const cleanupAnimations = setupScrollAnimations();
+    
+    return () => {
+      // Очищаем наблюдатели при размонтировании компонента
+      cleanupAnimations();
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="min-h-screen antialiased">
+      <Header />
+      <main>
+        <HeroSection />
+        <ServicesSection />
+        <PortfolioSection />
+        <TestimonialsSection />
+        <AboutSection />
+        <ContactSection />
+      </main>
+      <Footer />
+      <ScrollToTop />
     </div>
   );
 };
