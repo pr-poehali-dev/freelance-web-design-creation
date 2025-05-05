@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Heart, Instagram, Telegram, Github } from 'lucide-react';
+import { Heart, Instagram, MessageCircle, Github } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
               <h4 className="text-sm font-semibold mb-2">Социальные сети</h4>
               <div className="flex space-x-4">
                 <a href="#" className="text-gray-400 hover:text-primary transition-colors transform hover:scale-110">
-                  <Telegram className="h-5 w-5" />
+                  <MessageCircle className="h-5 w-5" />
                 </a>
                 <a href="#" className="text-gray-400 hover:text-primary transition-colors transform hover:scale-110">
                   <Instagram className="h-5 w-5" />
