@@ -143,7 +143,7 @@
   }
   
   .portfolio-item:hover .portfolio-overlay {
-    @apply bg-opacity-60;
+    @apply bg-opacity-70;
   }
   
   .portfolio-item:hover .portfolio-content {
@@ -152,5 +152,69 @@
   
   .portfolio-content {
     @apply text-white opacity-0 transition-opacity duration-300 p-4 text-center;
+  }
+
+  /* Добавленные анимации */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-float {
+    animation: float 5s ease-in-out infinite;
+  }
+
+  @keyframes pulse-shadow {
+    0%, 100% { box-shadow: 0 0 0 rgba(155, 135, 245, 0.4); }
+    50% { box-shadow: 0 0 20px rgba(155, 135, 245, 0.6); }
+  }
+
+  .animate-pulse-shadow {
+    animation: pulse-shadow 3s ease-in-out infinite;
+  }
+
+  @keyframes slide-in-from-right {
+    0% { transform: translateX(50px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-from-right 0.8s forwards;
+  }
+
+  @keyframes slide-in-from-left {
+    0% { transform: translateX(-50px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-from-left 0.8s forwards;
+  }
+
+  @keyframes scale-in {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.7s forwards;
+  }
+
+  /* Улучшенные эффекты наведения */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .highlight-text {
+    background: linear-gradient(to right, #9b87f5, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline;
   }
 }
