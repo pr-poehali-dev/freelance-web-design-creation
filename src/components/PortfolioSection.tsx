@@ -20,47 +20,47 @@ const PortfolioSection: React.FC = () => {
     {
       id: 1,
       title: "Интернет-магазин мебели",
-      description: "Современный интернет-магазин с каталогом товаров, фильтрами и онлайн-оплатой",
+      description: "Современный интернет-магазин на WordPress с каталогом и корзиной",
       image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=600",
       category: "wordpress",
       link: "#"
     },
     {
       id: 2,
-      title: "Сайт для IT-стартапа",
-      description: "Стильный лендинг с анимациями и интерактивными элементами",
+      title: "Лендинг для стартапа",
+      description: "Стильный одностраничный сайт для технологического стартапа",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=600",
       category: "tilda",
       link: "#"
     },
     {
       id: 3,
-      title: "Бот для службы доставки",
-      description: "Telegram-бот для приема и отслеживания заказов с интеграцией платежей",
+      title: "Telegram мини-приложение",
+      description: "Интерактивное приложение для заказа услуг внутри Telegram",
       image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=600",
       category: "telegram",
       link: "#"
     },
     {
       id: 4,
-      title: "Сайт для консалтинга",
-      description: "Многостраничный сайт с блогом, формой заявок и интеграцией CRM",
+      title: "Корпоративный сайт",
+      description: "Многостраничный сайт для консалтинговой компании",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=600",
       category: "wordpress",
       link: "#"
     },
     {
       id: 5,
-      title: "Лендинг для мероприятия",
-      description: "Одностраничный сайт с отсчетом времени, формой регистрации и интеграцией Telegram",
+      title: "Промо-страница мероприятия",
+      description: "Лендинг для конференции с формой регистрации",
       image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=600",
       category: "tilda",
       link: "#"
     },
     {
       id: 6,
-      title: "Система учета для бизнеса",
-      description: "Веб-приложение для управления финансами и аналитики с панелью администратора",
+      title: "Веб-приложение для учета",
+      description: "Система учета и аналитики для малого бизнеса",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=600",
       category: "custom",
       link: "#"
@@ -161,9 +161,9 @@ const PortfolioSection: React.FC = () => {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-                    <div className="portfolio-overlay backdrop-blur-sm">
+                    <div className="portfolio-overlay">
                       <div className="portfolio-content">
                         <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                         <p className="mb-4 text-gray-200">{project.description}</p>

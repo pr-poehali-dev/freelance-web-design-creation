@@ -1,15 +1,9 @@
 
-import type { Config } from "tailwindcss";
+import { type Config } from "tailwindcss";
 
-const config = {
+export default {
   darkMode: ["class"],
-  content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-  ],
-  prefix: "",
+  content: ["./src/**/*.{ts,tsx}"],
   theme: {
     container: {
       center: true,
@@ -53,15 +47,12 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-        },
-        'web-purple': '#9b87f5',
-        'web-deep-blue': '#1A1F2C',
-        'web-light-purple': '#D6BCFA',
-        'web-soft-purple': '#E5DEFF',
-        'web-soft-blue': '#D3E4FD',
+        // Кастомные цвета для сайта веб-дизайнера
+        "web-purple": "#9b87f5",
+        "web-deep-blue": "#1A1F2C",
+        "web-light-purple": "#D6BCFA",
+        "web-soft-purple": "#E5DEFF",
+        "web-soft-blue": "#D3E4FD",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -70,45 +61,32 @@ const config = {
       },
       keyframes: {
         "accordion-down": {
-          from: { height: "0" },
+          from: { height: 0 },
           to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
           from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+          to: { height: 0 },
         },
-        fadeIn: {
-          "0%": { opacity: "0", transform: "translateY(10px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
         },
-        slideUp: {
-          "0%": { opacity: "0", transform: "translateY(100px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        slideIn: {
-          "0%": { opacity: "0", transform: "translateX(-20px)" },
-          "100%": { opacity: "1", transform: "translateX(0)" },
-        },
-        pulse: {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.5" },
+        "pulse-shadow": {
+          "0%, 100%": { boxShadow: "0 0 0 rgba(155, 135, 245, 0.4)" },
+          "50%": { boxShadow: "0 0 20px rgba(155, 135, 245, 0.6)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fadeIn 0.5s ease-out forwards",
-        "slide-up": "slideUp 0.7s ease-out forwards",
-        "slide-in": "slideIn 0.5s ease-out forwards",
-        "pulse-slow": "pulse 3s ease-in-out infinite",
+        float: "float 5s ease-in-out infinite",
+        "pulse-shadow": "pulse-shadow 3s ease-in-out infinite",
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'hero-pattern': 'linear-gradient(to right, #9b87f5, #7E69AB)',
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;
-
-export default config;
